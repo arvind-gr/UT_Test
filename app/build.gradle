@@ -41,3 +41,4 @@ dependencies {
     testCompile 'junit:junit:' + rootProject.junitVersion;
     testCompile 'org.mockito:mockito-core:' + rootProject.mockitoVersion;
 }
+

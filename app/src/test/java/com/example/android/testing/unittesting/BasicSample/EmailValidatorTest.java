@@ -40,7 +40,7 @@ public class EmailValidatorTest {
 
     @Test
     public void emailValidator_InvalidEmailNoTld_ReturnsFalse() {
-        assertFalse(EmailValidator.isValidEmail("name@email"));
+        assertFalse(EmailValidator.isValidEmail("name"));
     }
 
     @Test
