@@ -15,10 +15,16 @@
  */
 
 apply plugin: 'com.android.application'
+apply plugin: 'jacoco'
 
 android {
     compileSdkVersion 28
     buildToolsVersion rootProject.buildToolsVersion
+    buildTypes {
+        debug {
+            testCoverageEnabled = true
+        }
+    }
     defaultConfig {
         applicationId "com.example.android.testing.unittesting.BasicSample"
         minSdkVersion 14
