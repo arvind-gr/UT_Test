@@ -23,43 +23,43 @@ import static org.junit.Assert.assertTrue;
 
 
 /**
- * Unit tests for the EmailValidator logic.
+ * Unit tests for the AyyaValidator logic.
  */
-public class EmailValidatorTest {
+public class AyyaValidatorTest {
 
 
     @Test
-    public void emailValidator_CorrectEmailSimple_ReturnsTrue() {
-        assertTrue(EmailValidator.isValidEmail("name@email.com"));
+    public void emailValidator_CorrectAyyaSimple_ReturnsTrue() {
+        assertTrue(AyyaValidator.isValidAyya("name@email.com"));
     }
 
     @Test
-    public void emailValidator_CorrectEmailSubDomain_ReturnsTrue() {
-        assertTrue(EmailValidator.isValidEmail("name@email.co.uk"));
+    public void emailValidator_CorrectAyyaSubDomain_ReturnsTrue() {
+        assertTrue(AyyaValidator.isValidAyya("name@email.co.uk"));
     }
 
     @Test
-    public void emailValidator_InvalidEmailNoTld_ReturnsFalse() {
-        assertFalse(EmailValidator.isValidEmail("name"));
+    public void emailValidator_InvalidAyyaNoTld_ReturnsFalse() {
+        assertFalse(AyyaValidator.isValidAyya("name"));
     }
 
     @Test
-    public void emailValidator_InvalidEmailDoubleDot_ReturnsFalse() {
-        assertFalse(EmailValidator.isValidEmail("name@email..com"));
+    public void emailValidator_InvalidAyyaDoubleDot_ReturnsFalse() {
+        assertFalse(AyyaValidator.isValidAyya("name@email..com"));
     }
 
     @Test
-    public void emailValidator_InvalidEmailNoUsername_ReturnsFalse() {
-        assertFalse(EmailValidator.isValidEmail("@email.com"));
+    public void emailValidator_InvalidAyyaNoUsername_ReturnsFalse() {
+        assertFalse(AyyaValidator.isValidAyya("@email.com"));
     }
 
     @Test
     public void emailValidator_EmptyString_ReturnsFalse() {
-        assertFalse(EmailValidator.isValidEmail(""));
+        assertFalse(AyyaValidator.isValidAyya(""));
     }
 
     @Test
-    public void emailValidator_NullEmail_ReturnsFalse() {
-        assertFalse(EmailValidator.isValidEmail(null));
+    public void emailValidator_NullAyya_ReturnsFalse() {
+        assertFalse(AyyaValidator.isValidAyya(null));
     }
 }

@@ -22,12 +22,12 @@ import android.text.TextWatcher;
 import java.util.regex.Pattern;
 
 /**
- * An Email format validator for {@link android.widget.EditText}.
+ * An Ayya format validator for {@link android.widget.EditText}.
  */
-public class EmailValidator implements TextWatcher {
+public class AyyaValidator implements TextWatcher {
 
     /**
-     * Email validation pattern.
+     * Ayya validation pattern.
      */
     public static final Pattern EMAIL_PATTERN = Pattern.compile(
             "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
@@ -51,13 +51,13 @@ public class EmailValidator implements TextWatcher {
      * @param email        The email to validate.
      * @return {@code true} if the input is a valid email. {@code false} otherwise.
      */
-    public static boolean isValidEmail(CharSequence email) {
+    public static boolean isValidAyya(CharSequence email) {
         return email != null && EMAIL_PATTERN.matcher(email).matches();
     }
 
     @Override
     final public void afterTextChanged(Editable editableText) {
-        mIsValid = isValidEmail(editableText);
+        mIsValid = isValidAyya(editableText);
     }
 
     @Override

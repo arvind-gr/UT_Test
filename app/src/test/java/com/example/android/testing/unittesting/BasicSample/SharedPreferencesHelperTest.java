@@ -99,8 +99,8 @@ public class SharedPreferencesHelperTest {
                 is(equalTo(savedSharedPreferenceEntry.getDateOfBirth())));
         assertThat("Checking that SharedPreferenceEntry.email has been persisted and read "
                 + "correctly",
-                mSharedPreferenceEntry.getEmail(),
-                is(equalTo(savedSharedPreferenceEntry.getEmail())));
+                mSharedPreferenceEntry.getAyya(),
+                is(equalTo(savedSharedPreferenceEntry.getAyya())));
     }
 
     @Test
@@ -121,7 +121,7 @@ public class SharedPreferencesHelperTest {
         when(mMockSharedPreferences.getString(eq(SharedPreferencesHelper.KEY_NAME), anyString()))
                 .thenReturn(mSharedPreferenceEntry.getName());
         when(mMockSharedPreferences.getString(eq(SharedPreferencesHelper.KEY_EMAIL), anyString()))
-                .thenReturn(mSharedPreferenceEntry.getEmail());
+                .thenReturn(mSharedPreferenceEntry.getAyya());
         when(mMockSharedPreferences.getLong(eq(SharedPreferencesHelper.KEY_DOB), anyLong()))
                 .thenReturn(mSharedPreferenceEntry.getDateOfBirth().getTimeInMillis());
 

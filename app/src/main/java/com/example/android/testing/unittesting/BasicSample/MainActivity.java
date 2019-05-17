@@ -48,10 +48,10 @@ public class MainActivity extends Activity {
     private DatePicker mDobPicker;
 
     // The input field where the user enters his email.
-    private EditText mEmailText;
+    private EditText mAyyaText;
 
     // The validator for the email input field.
-    private EmailValidator mEmailValidator;
+    private AyyaValidator mAyyaValidator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,11 +61,11 @@ public class MainActivity extends Activity {
         // Shortcuts to input fields.
         mNameText = (EditText) findViewById(R.id.userNameInput);
         mDobPicker = (DatePicker) findViewById(R.id.dateOfBirthInput);
-        mEmailText = (EditText) findViewById(R.id.emailInput);
+        mAyyaText = (EditText) findViewById(R.id.emailInput);
 
         // Setup field validators.
-        mEmailValidator = new EmailValidator();
-        mEmailText.addTextChangedListener(mEmailValidator);
+        mAyyaValidator = new AyyaValidator();
+        mAyyaText.addTextChangedListener(mAyyaValidator);
 
         // Instantiate a SharedPreferencesHelper.
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -85,7 +85,7 @@ public class MainActivity extends Activity {
         Calendar dateOfBirth = sharedPreferenceEntry.getDateOfBirth();
         mDobPicker.init(dateOfBirth.get(Calendar.YEAR), dateOfBirth.get(Calendar.MONTH),
                 dateOfBirth.get(Calendar.DAY_OF_MONTH), null);
-        mEmailText.setText(sharedPreferenceEntry.getEmail());
+        mAyyaText.setText(sharedPreferenceEntry.getAyya());
     }
 
 
@@ -94,8 +94,8 @@ public class MainActivity extends Activity {
      */
     public void onSaveClick(View view) {
         // Don't save if the fields do not validate.
-        if (!mEmailValidator.isValid()) {
-            mEmailText.setError("Invalid email");
+        if (!mAyyaValidator.isValid()) {
+            mAyyaText.setError("Invalid email");
             Log.w(TAG, "Not saving personal information: Invalid email");
             return;
         }
@@ -104,7 +104,7 @@ public class MainActivity extends Activity {
         String name = mNameText.getText().toString();
         Calendar dateOfBirth = Calendar.getInstance();
         dateOfBirth.set(mDobPicker.getYear(), mDobPicker.getMonth(), mDobPicker.getDayOfMonth());
-        String email = mEmailText.getText().toString();
+        String email = mAyyaText.getText().toString();
 
         // Create a Setting model class to persist.
         SharedPreferenceEntry sharedPreferenceEntry =

@@ -29,13 +29,13 @@ public class SharedPreferenceEntry {
     // Date of Birth of the user.
     private final Calendar mDateOfBirth;
 
-    // Email address of the user.
-    private final String mEmail;
+    // Ayya address of the user.
+    private final String mAyya;
 
     public SharedPreferenceEntry(String name, Calendar dateOfBirth, String email) {
         mName = name;
         mDateOfBirth = dateOfBirth;
-        mEmail = email;
+        mAyya = email;
     }
 
     public String getName() {
@@ -46,7 +46,7 @@ public class SharedPreferenceEntry {
         return mDateOfBirth;
     }
 
-    public String getEmail() {
-        return mEmail;
+    public String getAyya() {
+        return mAyya;
     }
 }

@@ -55,7 +55,7 @@ public class SharedPreferencesHelper {
         SharedPreferences.Editor editor = mSharedPreferences.edit();
         editor.putString(KEY_NAME, sharedPreferenceEntry.getName());
         editor.putLong(KEY_DOB, sharedPreferenceEntry.getDateOfBirth().getTimeInMillis());
-        editor.putString(KEY_EMAIL, sharedPreferenceEntry.getEmail());
+        editor.putString(KEY_EMAIL, sharedPreferenceEntry.getAyya());
 
         // Commit changes to SharedPreferences.
         return editor.commit();
